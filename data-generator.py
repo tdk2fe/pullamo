@@ -10,17 +10,20 @@ ofile = open('output.json', 'w')
 chunk = {}
 
 for i in range(10):
-    chunk[i] = {}
+    chunk = {}
     nlength = random.randrange(8)
-    chunk[i]['name'] = fake.name()
-    chunk[i]['email'] = fake.email()
-    chunk[i]['address'] = fake.street_address()
+    chunk['name'] = fake.name()
+    chunk['email'] = fake.email()
+    chunk['address'] = fake.street_address()
     
-    chunk[i]['Nested'] = {}
+    chunk['Nested'] = {}
     for j in range(nlength):
-        chunk[i]['Nested'][fake.word()] = fake.word() 
+        chunk['Nested'][fake.word()] = fake.word() 
 
-json.dump(chunk, ofile)
+    json.dump(chunk, ofile)
+
+
+
 ofile.close
 
 
